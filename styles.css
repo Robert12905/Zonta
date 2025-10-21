@@ -1,180 +1,158 @@
-/* Root stylesheet for Zonta site - minimal navbar styles inspired by zonta.org *//* Root stylesheet for Zonta site - minimal navbar styles inspired by zonta.org */
-
-:root{:root{
-
-  --zonta-burgundy: #7c1f27;   --zonta-burgundy: #7c1f27; 
-
-  --zonta-accent: #e29f0f; /* subtle gold accent */  --zonta-accent: #e29f0f; /* subtle gold accent */
-
-  --text-color: #ffffff;  --text-color: #ffffff;
-
-  --muted: #f3f5f6;  --muted: #f3f5f6;
-
-  /* Variables for header and nav bar adjusting */  /* Variables for header and nav bar adjusting */
-
-  --header-padding-vertical: 18px;   /* header size */  --header-padding-vertical: 18px;   /* header size */
-
-  --logo-height: 56px;              /* logo size */  --logo-height: 56px;              /* logo size */
-
-  --nav-font-size: 1rem;            /* nav link text size */  --nav-font-size: 1rem;            /* nav link text size */
-
-  --nav-padding-vertical: 10px;     /* nav link vertical padding */  --nav-padding-vertical: 10px;     /* nav link vertical padding */
-
-  --nav-gap: 22px;                  /* space between nav items */  --nav-gap: 22px;                  /* space between nav items */
-
-}}
-
-
-
-*{box-sizing:border-box}*{box-sizing:border-box}
-
-body{font-family:Segoe UI, Roboto, Arial, sans-serif;margin:0;color:#222;background:#fff}body{font-family:Segoe UI, Roboto, Arial, sans-serif;margin:0;color:#222;background:#fff}
-
-.container{max-width:1100px;margin:0 auto;padding:0 16px}.container{max-width:1100px;margin:0 auto;padding:0 16px}
-
-
-
-/* Header / Nav *//* Header / Nav */
-
-.site-header{background:var(--zonta-burgundy);.site-header{background:var(--zonta-burgundy);
-
-    color:var(--text-color);}    color:var(--text-color);}
-
-.header-inner{display:flex;.header-inner{display:flex;
-
-    align-items:center;    align-items:center;
-
-    justify-content:space-between;    justify-content:space-between;
-
-    padding: var(--header-padding-vertical) 0;    padding: var(--header-padding-vertical) 0;
-
-    min-height: 72px;}    min-height: 72px;}
-
-.brand-link{display:flex;.brand-link{display:flex;
-
-    align-items:center;    align-items:center;
-
-    text-decoration:none;    text-decoration:none;
-
-    color:var(--text-color)}    padding-left: 24px;
-
-.brand-logo{height:var(--logo-height);    color:var(--text-color)}
-
-    width:auto;.brand-logo{height:var(--logo-height);
-
-    margin-right:30px}    width:auto;
-
-    margin-right:12px}
-
-.nav-list{list-style:none;
-
-    display:flex;margin:0;.main-nav{}
-
-    padding:0;.nav-list{list-style:none;
-
-    gap:18px}    display:flex;margin:0;
-
-.nav-link{color:var(--text-color);    padding:0;
-
-    text-decoration:none;    gap:18px}
-
-    padding:8px 6px;.nav-item{}
-
-    border-radius:4px;.nav-link{color:var(--text-color);
-
-    font-weight:500}    text-decoration:none;
-
-.nav-link:hover,.nav-link:focus{background:rgba(255,255,255,0.08);    padding:8px 6px;
-
-    outline:none}    border-radius:4px;
-
-.nav-link.active{background:var(--zonta-accent);    font-weight:500}
-
-    color:#082635}.nav-link:hover,.nav-link:focus{background:rgba(255,255,255,0.08);
-
-    outline:none}
-
-/* Responsive: stack nav under brand on small screens */.nav-link.active{background:var(--zonta-accent);
-
-@media (max-width:640px){    color:#082635}
-
-  .header-inner{flex-direction:column;
-
-    align-items:stretch;/* Responsive: stack nav under brand on small screens */
-
-    gap:8px}@media (max-width:640px){
-
-  .nav-list{flex-direction:column;  .header-inner{flex-direction:column;
-
-    background:transparent;    align-items:stretch;
-
-    padding:8px;    gap:8px}
-
-    border-radius:6px}  .nav-list{flex-direction:column;
-
-  .nav-link{display:block}    background:transparent;
-
-}    padding:8px;
-
-    border-radius:6px}
-
-/* Page content spacing */  .nav-link{display:block}
-
-main{padding:28px 16px}}
-
-footer{padding:18px 16px;background:#f7f7f7;
-
-    color:#333;/* Page content spacing */
-
-    text-align:center}main{padding:28px 16px}
-
-footer{padding:18px 16px;background:#f7f7f7;
-
-/* Utility: make it easy to mark current page in markup */    color:#333;
-
-.is-hidden{display:none}    text-align:center}
-
-
-
-/* Hero / content image layout to mirror reference site *//* Utility: make it easy to mark current page in markup */
-
-.hero{display:flex;.is-hidden{display:none}
-
-    align-items:center;
-
-    gap:24px;/* Hero / content image layout to mirror reference site */
-
-    padding:24px 0}.hero{display:flex;
-
-.hero-text{flex:1;    align-items:center;
-
-    min-width:220px}    gap:24px;
-
-.hero-figure{flex:1;    padding:24px 0}
-
-    max-width:680px;.hero-text{flex:1;
-
-    margin:0}    min-width:220px}
-
-.hero-image{width:100%;.hero-figure{flex:1;
-
-    height:auto;    max-width:680px;
-
-    display:block;    margin:0}
-
-    border-radius:6px;.hero-image{width:100%;
-
-    box-shadow:0 6px 18px rgba(2,18,30,0.15)}    height:auto;
-
-    display:block;
-
-@media (max-width:900px){    border-radius:6px;
-
-  .hero{flex-direction:column}    box-shadow:0 6px 18px rgba(2,18,30,0.15)}
-
-  .hero-figure{width:100%}
-
-}@media (max-width:900px){
-  .hero{flex-direction:column}
-  .hero-figure{width:100%}
+/* Root stylesheet for Zonta site - minimal navbar styles inspired by zonta.org */
+:root {
+  --zonta-burgundy: #7c1f27; 
+  --zonta-accent: #e29f0f;
+  --text-color: #ffffff;
+  --muted: #f3f5f6;
+  /* Variables for header and nav bar adjusting */
+  --header-padding-vertical: 18px;
+  --logo-height: 56px;
+  --nav-font-size: 1rem;
+  --nav-padding-vertical: 10px;
+  --nav-gap: 22px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Segoe UI, Roboto, Arial, sans-serif;
+  margin: 0;
+  color: #222;
+  background: #fff;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Header / Nav */
+.site-header {
+  background: var(--zonta-burgundy);
+  color: var(--text-color);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--header-padding-vertical) 0;
+  min-height: 72px;
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding-left: 24px;
+  color: var(--text-color);
+}
+
+.brand-logo {
+  height: var(--logo-height);
+  width: auto;
+  margin-right: 12px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 18px;
+}
+
+.nav-link {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 8px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background: rgba(255,255,255,0.08);
+  outline: none;
+}
+
+.nav-link.active {
+  background: var(--zonta-accent);
+  color: #082635;
+}
+
+/* Responsive: stack nav under brand on small screens */
+@media (max-width:640px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  
+  .nav-list {
+    flex-direction: column;
+    background: transparent;
+    padding: 8px;
+    border-radius: 6px;
+  }
+  
+  .nav-link {
+    display: block;
+  }
+}
+
+/* Page content spacing */
+main {
+  padding: 28px 16px;
+}
+
+footer {
+  padding: 18px 16px;
+  background: #f7f7f7;
+  color: #333;
+  text-align: center;
+}
+
+/* Utility: make it easy to mark current page in markup */
+.is-hidden {
+  display: none;
+}
+
+/* Hero / content image layout to mirror reference site */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 0;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 220px;
+}
+
+.hero-figure {
+  flex: 1;
+  max-width: 680px;
+  margin: 0;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(2,18,30,0.15);
+}
+
+@media (max-width:900px) {
+  .hero {
+    flex-direction: column;
+  }
+  .hero-figure {
+    width: 100%;
+  }
 }
