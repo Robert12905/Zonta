@@ -1,0 +1,164 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #faf7f2;
+}
+
+/* Hero section */
+.about-hero {
+  text-align: center;
+  background-color: #f8f5ef;
+  padding: 40px 20px;
+  position: relative;
+  overflow: visible;
+
+  /* NEW: single source of truth for bar/image height */
+  --hero-bar-height: 380px;
+}
+
+.about-hero .hero-text h2 {
+  color: #8b6a3f;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.about-hero .hero-text h1 {
+  font-size: 2.5rem;
+  color: #3a2d1b;
+}
+
+/* full-width bar behind the content */
+.about-hero::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: var(--hero-bar-height);   /* use variable */
+  background: rgba(128, 0, 32, 1);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* text column (left) */
+.hero-text {
+  position: relative;
+  z-index: 3;
+  text-align: left;
+  max-width: 50%;
+}
+
+/* optional small note under titles */
+.hero-left-note {
+  margin-top: 8px;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* image column (right) — make image height equal to bar height so it "hooks" to top/bottom */
+.about-hero .hero-image {
+  position: relative;
+  z-index: 2;
+  display: block;
+  height: var(--hero-bar-height);   /* use same variable */
+  width: auto;
+  max-width: 50%;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 0;
+}
+
+/* container that holds text on the left and image on the right */
+.about-hero .hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* responsive: stack on narrow screens and make bar shorter */
+@media (max-width: 760px) {
+  .about-hero .hero-inner {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .about-hero::before {
+    height: 160px;
+  }
+
+  .about-hero .hero-image {
+    width: 100%;
+    max-width: 800px;
+    height: 160px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+/* Intro paragraph */
+.about-intro {
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: center;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+/* 3-column layout */
+.about-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto 60px auto;
+  padding: 0 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  width: 320px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card h3 {
+  color: #6e8878;
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+
+.card p {
+  padding: 0 20px 20px;
+  font-size: 0.95rem;
+  color: #555;
+}
