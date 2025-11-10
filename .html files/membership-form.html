@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Zonta Club Membership Application</title>
+    <link rel="stylesheet" href="../.css files/styles.css" />
+    <link rel="stylesheet" href="../.css files/forms.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card">
+        <h1>Zonta Club of Naples — Membership Application Form</h1>
+        <p class="lead">
+          Fill out all required fields (*) and submit this form.
+        </p>
+
+        <form
+          id="zontaForm"
+          action="https://formsubmit.co/danielg0798@gmail.com" 
+          method="POST"
+        >
+          <!-- FormSubmit: redirect after submit -->
+          <input type="hidden" name="_next" value="/index.html" />
+          <!-- make a redirect for value="" above-->
+
+          <div class="section-title">Member Type</div>
+          <div class="inline">
+            <label>
+              <input
+                type="radio"
+                name="member_type"
+                value="Club member"
+                required
+              />Club member
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="member_type"
+                value="Reinstating member"
+              />Reinstating member
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="member_type"
+                value="Young professional"
+              />Young professional (under 30)
+            </label>
+          </div>
+
+          <div class="row">
+            <div class="column">
+              <label>First Name <span class="asterisk">*</span></label>
+              <input name="first_name" type="text" required />
+            </div>
+            <div class="column">
+              <label
+                >Last Name / Surname
+                <span class="asterisk">*</span>
+              </label>
+              <input name="last_name" type="text" required />
+            </div>
+          </div>
+
+          <label>Address <span class="asterisk">*</span></label>
+          <input name="address" type="text" required />
+          <div class="row">
+            <div class="column">
+              <label>City <span class="asterisk">*</span></label>
+              <input name="city" type="text" required />
+            </div>
+            <div class="column">
+              <label>State / Province <span class="asterisk">*</span></label>
+              <input name="state" type="text" required />
+            </div>
+            <div class="column">
+              <label>Postal Code <span class="asterisk">*</span></label>
+              <input name="postal_code" type="text" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="column">
+              <label>Country <span class="asterisk">*</span></label>
+              <input name="country" type="text" required />
+            </div>
+            
+            <div class="column">
+              <label>Home Telephone</label>
+              <input name="home_phone" type="tel" />
+            </div>
+
+            <div class="column">
+              <label>Mobile / Cell Phone</label>
+              <input name="mobile_phone" type="tel" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="column">
+              <label>Email <span class="asterisk">*</span></label>
+              <input name="email" type="email" required />
+            </div>
+            <div class="column">
+              <label>Occupation / Title</label>
+              <input name="occupation" type="text" />
+            </div>
+            <div class="column">
+              <label>Date of Birth <span class="asterisk">*</span></label>
+              <input name="dob" type="date" required />
+            </div>
+          </div>
+          <div class="column">
+            <label>Gender</label>
+                <div class="inline">
+                    <label>
+                    <input type="radio" name="gender" value="Female" /> Female
+                    </label>
+                    <label>
+                    <input type="radio" name="gender" value="Male" /> Male
+                    </label>
+                    <label>
+                    <input type="radio" name="gender" value="Other" /> Other
+                    </label>
+                </div>
+          </div>
+
+        <div class="section-title">Awards / Background</div>
+          <div class="muted-block">
+            <label>
+              <strong>I am a Zonta Education Award recipient (specify)</strong>
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="award"
+                value="Amelia Earhart Fellowship"
+              />Amelia Earhart Fellowship
+            </label>
+
+            <label>
+              <input type="checkbox" name="award" value="Jane M. Klausman" />
+              Jane M. Klausman Women in Business Scholarship
+            </label>
+
+            <label>
+              <input
+                type="checkbox"
+                name="award"
+                value="Young Women in Public Affairs"
+              />Young Women in Public Affairs Award
+            </label>
+          </div>
+
+          <label
+            >Former Z Club / Golden Z Club membership (please specify)</label
+          >
+          <input name="former_zclub" type="text" />
+
+          <label>Former Zonta Club membership (please specify)</label>
+          <input name="former_zonta" type="text" />
+
+          <label>Interests, skills, languages and other affiliations</label>
+          <textarea
+            name="interests"
+            placeholder="List anything relevant..."
+          ></textarea>
+
+          <div class="section-title">Consent & Declarations</div>
+          <ul class="consent">
+            <li>
+              I am committed to upholding the mission, objects and vision of
+              Zonta International and I shall comply with the rules and polices
+              of Zonta International. Please email memberrecords@zonta.org if
+              you wish to view the governing documents which are currently
+              located on the “member only” part of the website.
+            </li>
+
+            <li>
+              I give consent for the club to store the personal membership
+              information including photographs.
+            </li>
+          </ul>
+
+          <label>
+            <input
+              id="consentCheckbox"
+              type="checkbox"
+              name="consent"
+              required
+            />
+            I consent to the storage of my personal information.
+            <span class="asterisk">*</span></label>
+            
+          <div class="section-title">Dues</div>
+    <div class="dues-box">
+    <table class="dues-table">
+    <tr>
+    <th style="text-align:left; ">Member Type</th>
+    <th style="text-align:left; ">Dues (All levels)</th>
+    </tr>
+    <tr>
+    <td>Club Member</td>
+    <td><input type="checkbox" name="dues_club" value="club_member"> US$198 ($103 Intl, $40 District, $55 Local) *$154</td>
+    </tr>
+    <tr>
+    <td>Young professionals (under 30)</td>
+    <td><input type="checkbox" name="dues_young" value="young_professional"> US$59/*US$37</td>
+    </tr>
+    </table>
+
+
+    <p><strong>Please Note:</strong> Members joining from 1 December – 31 May will pay annual renewal dues by 1 June for the following year.</p>
+    <p><strong>Notes:</strong> The Zonta year is 1 June - 31 May; Zonta Headquarters is located in the USA. The new member / reinstatement fee is included in the dues amounts above. North American Zontians pay an additional US$3. Membership is not complete until both this form and payment are received and processed.<br>*Half-year dues rate for members joining 1 December – 31 May.</p>
+    </div>
+
+
+    <div class="section-title">Payment</div>
+    <div class="payment-box">
+    <table class="payment-table" >
+    <tr>
+    <th text-align:left;>Payment Type</th>
+    <th text-align:left;>Where to Submit</th>
+    <th text-align:left;>How to Submit</th>
+    </tr>
+
+
+    <tr>
+    <td><input type="checkbox" name="pay_credit" value="credit"> (Ex: Credit Card)</td>
+    <td>Norine Weber<br>Treasurer, Zonta Club of Naples<br>414-531-1543</td>
+    <td>Call Treasurer, Norine Weber and make arrangements to provide credit card information 414-531-1543</td>
+    </tr>
+
+
+    <tr>
+    <td><input type="checkbox" name="pay_check" value="check_moneyorder"> (Ex: Check/Money Order)</td>
+    <td>Zonta Club of Naples<br>P.O. Box 10911<br>Naples, FL 34101</td>
+    <td>Mail Check/Money Order payable to Zonta Club of Naples with completed application to P.O. Box 10911, Naples FL 34101</td>
+    </tr>
+
+
+    <tr>
+    <td><input type="checkbox" name="pay_cash" value="cash"> (Ex: Cash)</td>
+    <td>Norine Weber<br>Treasurer, Zonta Club of Naples<br>414-531-1543</td>
+    <td>Call Treasurer, Norine Weber and make arrangements to make cash payment 414-531-1543</td>
+    </tr>
+    </table>
+    </div>
+          <div class="refferal-signature-section">
+            <div>
+              <label>How did you learn about Zonta?</label>
+              <select name="learned_from">
+                <option value="friend">A friend or family member</option>
+                <option value="website">Club / Zonta website</option>
+                <option value="social">Social media</option>
+                <option value="education_award">Zonta education award</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label>Referral contact (name)</label>
+              <input name="referral_name" type="text" />
+            </div>
+            <div>
+              <label>Referral contact (phone/email)</label>
+              <input name="referral_contact" type="text" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="column">
+              <label
+                >Signature (type your full name)<span class="asterisk"
+                  >*</span
+                ></label
+              >
+              <input name="signature" type="text" required />
+            </div>
+            <div class="column">
+              <label>Date <span class="asterisk">*</span></label>
+              <input name="signed_date" type="date" required />
+            </div>
+          </div>
+
+          <div class="section-title">For club use (optional)</div>
+          <div class="row">
+            <div class="column">
+              <label>Classification code</label>
+              <input name="classification_code" type="text" />
+            </div>
+            <div class="column">
+              <label>Date received</label>
+              <input name="date_received" type="date" />
+            </div>
+            <div class="column">
+              <label>Date approved</label>
+              <input name="date_approved" type="date" />
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="form-submit" id="submitBtn" type="submit">
+              Submit application
+            </button>
+            <div class="submit-feedback">
+              You will be emailed an acknowledgment shortly after submitting.
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // Prevent multiple submissions and ensure consent checked
+      const form = document.getElementById("zontaForm");
+      const btn = document.getElementById("submitBtn");
+      form.addEventListener("submit", (e) => {
+        // basic required fields are enforced by HTML; this prevents double-submits
+        btn.disabled = true;
+        btn.textContent = "Submitting...";
+      });
+
+      // Example: show/hide young professional note if that member type selected
+      const radios = document.querySelectorAll('input[name="member_type"]');
+      function checkYoung() {
+        const isYoung = Array.from(radios).some(
+          (r) => r.checked && r.value.includes("Young")
+        );
+        // If you wanted to show a message or auto-fill something you could do it here.
+        // For now we just log to console (demo of when JS can add behavior)
+        console.log("young professional selected?", isYoung);
+      }
+      radios.forEach((r) => r.addEventListener("change", checkYoung));
+    </script>
+  </body>
+</html>
