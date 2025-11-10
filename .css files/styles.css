@@ -6,10 +6,14 @@ html, body {
 }
 
 :root {
-  --zonta-burgundy: #7c1f27; 
-  --zonta-accent: #e29f0f;
-  --text-color: #ffffff;
-  --muted: #f3f5f6;
+  --zonta-mahogany: #802528;
+  --zonta-gold: #F5BD47;
+  --zonta-gold-40: #FFE3B6;
+  --zonta-cyan: #005F71;
+  --zonta-cyan-40: #8EBDC3;
+  --white-text: #ffffff;
+  --black-text: #222222;
+  --muted: #757575;
   /* Variables for header and nav bar adjusting */
   --header-padding-vertical: 18px;
   --logo-height: 56px;
@@ -23,7 +27,7 @@ html, body {
 }
 
 body {
-  font-family: Segoe UI, Roboto, Arial, sans-serif;
+  font-family: Hypatia Sans, Segoe UI, Roboto, Arial, sans-serif;
   margin: 0;
   color: #222;
   background: #fff;
@@ -42,8 +46,8 @@ body { padding-bottom: 0; }
 
 /* Header / Nav */
 .site-header {
-  background: var(--zonta-burgundy);
-  color: var(--text-color);
+  background: var(--zonta-mahogany);
+  color: var(--white-text);
   /* vertical buffer after header so content doesn't sit directly beneath it */
   margin-bottom: 32px;
   /* ensure header appears above page-specific hero bars or pseudo-elements */
@@ -76,7 +80,7 @@ body { padding-bottom: 0; }
   align-items: center;
   text-decoration: none;
   padding-left: 24px;
-  color: var(--text-color);
+  color: var(--white-text);
 }
 
 .brand-logo {
@@ -94,7 +98,7 @@ body { padding-bottom: 0; }
 }
 
 .contact-info a {
-  color: var(--text-color);
+  color: var(--white-text);
   text-decoration: none;
   font-size: 0.95rem;
 }
@@ -105,7 +109,7 @@ body { padding-bottom: 0; }
 }
 
 .divider-text {
-  color: var(--text-color);
+  color: var(--white-text);
   font-weight: 700;
 }
 
@@ -167,7 +171,7 @@ body { padding-bottom: 0; }
 .footer-links-list li { margin: 8px 0; }
 .footer-links-list a { color: #082635; text-decoration: none; }
 .footer-newsletter input[type="email"] { padding: 8px 10px; width: 100%; box-sizing: border-box; margin-bottom: 8px; }
-.newsletter-form button { padding: 8px 12px; background: var(--zonta-burgundy); color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+.newsletter-form button { padding: 8px 12px; background: var(--zonta-mahogany); color: #fff; border: none; border-radius: 4px; cursor: pointer; }
 .footer-thanks { text-align: left; }
 
 /* footer-middle: links + newsletter side-by-side */
@@ -202,7 +206,6 @@ body { padding-bottom: 0; }
 
 /* Make footer stack vertically so content rows sit above the centered copyright */
 .site-footer {
-
   margin-top: 10px;
   display: flex;
   flex-direction: column;
@@ -348,7 +351,7 @@ body { padding-bottom: 0; }
 }
 
 .nav-link {
-  color: var(--text-color);
+  color: var(--white-text);
   text-decoration: none;
   padding: 8px 6px;
   border-radius: 4px;
@@ -362,7 +365,7 @@ body { padding-bottom: 0; }
 }
 
 .nav-link.active {
-  background: var(--zonta-accent);
+  background: var(--zonta-gold);
   color: #082635;
 }
 

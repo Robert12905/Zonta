@@ -1,0 +1,186 @@
+.container {
+  max-width: 900px;
+  margin: 36px auto;
+  padding: 24px;
+}
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(20, 20, 30, 0.06);
+  padding: 22px;
+}
+h1 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: var(--zonta-mahogany);
+}
+p.lead {
+  margin: 6px 0 18px;
+  color: var(--zonta-gold);
+}
+form {
+  display: grid;
+  gap: 14px;
+}
+.row {
+  display: flex;
+  gap: 12px;
+}
+.column {
+  flex: 1;
+  min-width: 0;
+}
+label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e6e6f0;
+  background: transparent;
+}
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+.asterisk {
+  color: var(--zonta-gold);
+  font-size: 20px;
+}
+.consent {
+  font-size: 13px;
+  color: var(--black-text);
+  margin-left: 12px;
+}
+.dues-box,
+.payment-box {
+  background: var(--card, #ffffff);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-bottom: 24px;
+}
+
+.dues-table,
+.payment-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 12px;
+}
+
+.dues-table th,
+.dues-table td,
+.payment-table th,
+.payment-table td {
+  padding: 6px 8px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+/* Remove bottom borders on last row */
+.dues-table tr:last-child td,
+.payment-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Column headers */
+.dues-table th,
+.payment-table th {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Checkboxes: slightly larger for readability (PDF-like look) */
+.dues-box input[type="checkbox"],
+.payment-box input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--accent, #9b2c70); /* modern browsers */
+}
+
+/* Notes under the dues section */
+.dues-box p {
+  margin: 8px 0;
+  font-size: 0.92rem;
+  color: #444;
+  line-height: 1.35;
+}
+.payment-box{
+  background: var(--zonta-gold-40);
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #e6e6f0;
+}
+.submit-feedback {
+  font-size: 13px;
+  color: var(--muted);
+  margin-left: 12px;
+}
+.inline {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.form-submit {
+  background: --zonta-mahogany; /* starting color */
+  color: white; /* text color */
+  padding: 10px 16px;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: background-color 0.2s ease; /* smooth color fade */
+}
+.form-submit:hover {
+  background: #D1A5A1;        /* hover color */
+}
+button {
+  background: var(--zonta-mahogany);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 9px;
+  cursor: pointer;
+}
+button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.section-title {
+  font-weight: 600;
+  margin-top: 8px;
+  color: #222;
+}
+.referral-signature-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.muted-block {
+  background: #fbfbfc;
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #f0eff5;
+}
+@media (max-width: 720px) {
+  .row {
+    flex-direction: column;
+  }
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
