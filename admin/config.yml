@@ -25,3 +25,18 @@ collections:
       - { name: "date", label: "Event Date", widget: "datetime" }
       - { name: "buttonText", label: "Button Text", widget: "string", required: false }
       - { name: "buttonLink", label: "Button Link", widget: "string", required: false }
+
+  - name: "about"
+    label: "About Page"
+    file: "content/about.json"
+    fields:
+      - { name: "heroImage", label: "Hero Main Image", widget: "image" }
+      - { name: "introText", label: "Intro Paragraph", widget: "text" }
+      - name: "cards"
+        label: "Info Cards"
+        widget: "list"
+        fields:
+          - { name: "title", label: "Card Title", widget: "string" }
+          - { name: "image", label: "Card Image", widget: "image" }
+          - { name: "text", label: "Card Text", widget: "text" }
+          - { name: "link", label: "Link URL (Optional)", widget: "string", required: false }

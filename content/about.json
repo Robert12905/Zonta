@@ -1,0 +1,27 @@
+{
+  "heroImage": "/Assets/Naples-Group2.jpeg",
+  "introText": "Zonta Club of Naples is part of tens of thousands of professionals worldwide who demand gender equality and the end of violence against women and girls. We seek to eradicate human trafficking, domestic violence, and child marriage so no woman lives in fear. Zonta provides grants, resources, scholarships and services while advocating change, educating the community and helping direct responders and law enforcement. We say NO to violence and YES to equal opportunity and rights for women and girls of Collier County.",
+  "cards": [
+    {
+      "title": "Biography",
+      "image": "/Assets/standingSign.jpg",
+      "text": "See our mission and vision for a more equal world, which are supported by our values and drive our global and local service and advocacy efforts."
+    },
+    {
+      "title": "Zonta History",
+      "image": "/Assets/historyHeader.jpg",
+      "text": "Look back at our first century of service and advocacy and the milestones that made Zonta the organization we are today.",
+      "link": "https://www.zonta.org/Web/About/100_Years_Zonta_International.aspx"
+    },
+    {
+      "title": "Work",
+      "image": "/Assets/workbalance.jpeg",
+      "text": "Learn more about our volunteer leaders at the local, regional and international levels and our Headquarters staff."
+    },
+    {
+      "title": "Contact Information",
+      "image": "/Assets/clubofnaples.png",
+      "text": "Learn more about our volunteer leaders at the local, regional and international levels and our Headquarters staff."
+    }
+  ]
+}

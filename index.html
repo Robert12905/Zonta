@@ -58,58 +58,70 @@
         </section>
     </main>
 
-                        <footer class="site-footer">
+        <footer class="site-footer">
 
-                            <div class="container footer-center">
+            <div class="container footer-center">
 
-                                <div class="footer-row">
+                <div class="footer-row">
 
-                                <div class="footer-left">
-                                    <p class="site-title">Zonta Club of Naples</p>
-                                        <div class="footer-underline" aria-hidden="true"></div>
-                                    <p class="site-sub">Member of Zonta International</p>
-                                    <p class="site-sub">P.O. Box 10911</p>
-                                    <p class="site-sub">Naples, FL 34102</p>
+                <div class="footer-left">
+                    <p class="site-title">Zonta Club of Naples</p>
+                        <div class="footer-underline" aria-hidden="true"></div>
+                    <p class="site-sub">Member of Zonta International</p>
+                    <p class="site-sub">P.O. Box 10911</p>
+                    <p class="site-sub">Naples, FL 34102</p>
 
-                                    <p class="site-sub">Phone: <a href="tel:9378647087">(937) 864-7087</a> | Email: <a href="mailto:info@zontaclubofnaples.org">info@zontaclubofnaples.org</a></p>
-                                    <div class="footer-underline" aria-hidden="true"></div>
+                    <p class="site-sub">Phone: <a href="tel:9378647087">(937) 864-7087</a> | Email: <a href="mailto:info@zontaclubofnaples.org">info@zontaclubofnaples.org</a></p>
+                    <div class="footer-underline" aria-hidden="true"></div>
 
-                                    <p class="site-sub">1200 Harger Road, Suite 330, Oak Brook, IL 60523-3384, USA</p>
-                                    <p class="site-sub">Phone: <a href="tel:+16309281400">+1 (630) 928-1400</a> | Email: <a href="mailto:info@zontanaples.org">info@zontanaples.org</a></p>
-                                </div>
+                    <p class="site-sub">1200 Harger Road, Suite 330, Oak Brook, IL 60523-3384, USA</p>
+                    <p class="site-sub">Phone: <a href="tel:+16309281400">+1 (630) 928-1400</a> | Email: <a href="mailto:info@zontanaples.org">info@zontanaples.org</a></p>
+                </div>
 
-                                <!-- Split into three even columns: left, links, newsletter -->
-                                <div class="footer-links">
-                                    <p class="site-title">Links</p>
-                                    <div class="footer-underline" aria-hidden="true"></div>
-                                    <ul class="footer-links-list">
-                                        <li><a href="./html files/about.html">About</a></li>
-                                        <li><a href="./html files/membership.html">Membership</a></li>
-                                        <li><a href="./html files/scholarship.html">Scholarship</a></li>
-                                        <li><a href="./html files/contact.html">Contact</a></li>
-                                        <li><a href="./html files/e-commerce.html">Donate / Shop</a></li>
-                                    </ul>
-                                </div>
+                <!-- Split into three even columns: left, links, newsletter -->
+                <div class="footer-links">
+                    <p class="site-title">Links</p>
+                    <div class="footer-underline" aria-hidden="true"></div>
+                    <ul class="footer-links-list">
+                        <li><a href="./html files/about.html">About</a></li>
+                        <li><a href="./html files/membership.html">Membership</a></li>
+                        <li><a href="./html files/scholarship.html">Scholarship</a></li>
+                        <li><a href="./html files/contact.html">Contact</a></li>
+                        <li><a href="./html files/e-commerce.html">Donate / Shop</a></li>
+                    </ul>
+                </div>
 
-                                <div class="footer-newsletter">
-                                    <p class="site-title">Newsletter</p>
-                                    <form class="newsletter-form" action="#" method="post">
-                                        <label for="newsletter-email" class="is-hidden">Email address</label>
-                                        <input id="newsletter-email" type="email" name="email" placeholder="Your email" required>
-                                        <button type="submit">Subscribe</button>
-                                    </form>
-                                </div>
-                            </div>
+                <div class="footer-newsletter">
+                    <p class="site-title">Newsletter</p>
+                    <form class="newsletter-form" action="#" method="post">
+                        <label for="newsletter-email" class="is-hidden">Email address</label>
+                        <input id="newsletter-email" type="email" name="email" placeholder="Your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
 
-                            <!-- copyright placed as a separate container within the footer -->
-                            <div class="container copyright">
-                                <p>&copy; 2025 Zonta Club. All rights reserved.</p>
-                            </div>
+            <!-- copyright placed as a separate container within the footer -->
+            <div class="container copyright">
+                <p>&copy; 2025 Zonta Club. All rights reserved.</p>
+            </div>
 
-                            </footer>
+            </footer>
 
-                            <!-- Load CMS content into the page (populates hero title, paragraph, image) -->
-                            <script src="./js/content-loader.js"></script>
+            <!-- Load CMS content into the page (populates hero title, paragraph, image) -->
+            <script src="./js/content-loader.js"></script>
+            <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-                        </body>
-                        </html>
+            <script>
+                if (window.netlifyIdentity) {
+                window.netlifyIdentity.on("init", user => {
+                    if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                    }
+                });
+                }
+            </script>
+    </body>
+</html>
