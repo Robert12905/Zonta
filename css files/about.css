@@ -6,8 +6,8 @@
 }
 
 body {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.6;
+  /* inherit the site's global font (defined in styles.css) so header and nav stay consistent */
+  font-family: Segoe UI, Roboto, Arial, sans-serif;
   color: #333;
   background-color: #faf7f2;
 }
@@ -16,7 +16,7 @@ body {
 .about-hero {
   text-align: center;
   background-color: #f8f5ef;
-  padding: 40px 20px;
+  padding: 0, 22px;
   position: relative;
   overflow: visible;
 
@@ -35,6 +35,8 @@ body {
   color: #3a2d1b;
 }
 
+/* headings will inherit the site's global font so header/nav match index */
+
 /* full-width bar behind the content */
 .about-hero::before {
   content: "";
@@ -42,7 +44,7 @@ body {
   left: 0;
   right: 0;
   height: var(--hero-bar-height);   /* use variable */
-  background: rgba(128, 0, 32, 1);
+  background: var(--zonta-mahogany);
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;

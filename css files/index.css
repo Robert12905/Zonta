@@ -1,0 +1,119 @@
+/* --- HERO WRAPPER --- */
+.hero {
+  position: relative;
+  height: 600px;
+  display: flex;
+  padding-left: 60px;
+  align-items: center;
+  background-image: url("../Assets/Yellow-background.png");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(2,18,30,0.15);
+}
+
+/* --- TEXT CONTAINER --- */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 450 px;
+}
+
+/* --- TITLE --- */
+.hero-content h1 {
+  text-shadow: -4px 2px 5px rgba(0,0,0,0.3); /*x,y,z offset and blur*/
+  font: bold clamp(36px, 4vw, 54px) / clamp(48px, 5vw, 64px) var(--font-family);
+  margin-bottom: 20px;
+  color: var(--white-text);
+}
+
+/* --- PARAGRAPH --- */
+.hero-content p {
+  text-shadow: -4px 2px 5px rgba(0,0,0,0.3); /*x,y,z offset and blur*/
+  color: var(--white-text);
+  font-size: 1.5rem;
+  line-height: 1.5;
+  padding-right: 50px; /* space between text and image */
+  padding-bottom: 30px; /* space between text and button */
+}
+/* --- IMAGE ANIMATIONS --- */
+.spill {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateY(-50%);
+  height: 100%;
+  z-index: 1;
+  animation: spillIn 1.6s ease-out forwards;
+}
+
+/* Group photo fade animation */
+.group-photo {
+  position: relative;
+  right: 10px;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeIn 1.4s ease-out forwards;
+  animation-delay: 1.2s; /* appears after spill */
+}
+/* --- BUTTON --- */
+.hero-btn {
+  display: inline-block;
+  background: white;
+  color: black;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+    scale: 1.05;
+    background: var(--zonta-mahogany); /* change button background on hover */
+    color: var(--white-text); /* make button text white on hover */
+}
+
+@keyframes spillIn {
+  0% {
+    /* Start position: Fully visible, slightly off-screen to the right (if needed) */
+    opacity: 0; 
+    transform: translateX(100%); /* Starts left to 100% opacity on right*/
+  }
+  100% {
+    /* End position: Slide left and fade out */
+    opacity: 1; 
+    transform: translateX(0%); /* For right side placement */
+  }
+}
+
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@media (max-width: 1064px) {
+  .hero {
+    flex-direction: column;
+    height: auto;
+    padding: 30px;
+  }
+
+  .group-photo {
+    position: static;
+    width: 90%;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .spill {
+    display: none; /* Optional: hide gradient on mobile */
+  }
+}

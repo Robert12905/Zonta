@@ -1,0 +1,27 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "homepage"
+    label: "Homepage Content"
+    file: "content/homepage.json"
+    fields:
+      - { name: "heroTitle", label: "Hero Title", widget: "string" }
+      - { name: "mainParagraph", label: "Main Paragraph", widget: "text" }
+      - { name: "heroImage", label: "Hero Image", widget: "image" }
+  - name: "events"
+    label: "Events"
+    folder: "content/events"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Event Title", widget: "string" }
+      - { name: "description", label: "Full Event Description", widget: "markdown" }
+      - { name: "image", label: "Event Image", widget: "image" }
+      - { name: "date", label: "Event Date", widget: "datetime" }
+      - { name: "buttonText", label: "Button Text", widget: "string", required: false }
+      - { name: "buttonLink", label: "Button Link", widget: "string", required: false }
