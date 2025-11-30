@@ -92,8 +92,6 @@
   return [];
   }
     
-
-
     const container = document.getElementById('events-container');
     if (!container) return;
 
@@ -121,9 +119,6 @@
       imgCol.appendChild(img);
 
       // ---- content section ----
-      const contentCol = document.createElement('div');
-      contentCol.className = 'event-content';
-
       const h4 = document.createElement('h4');
       if (event.link) {
         const a = document.createElement('a');
@@ -174,14 +169,11 @@
         desc.innerHTML = html;
       }
 
-      contentCol.appendChild(h4);
-      contentCol.appendChild(dateSpan);
-      contentCol.appendChild(document.createElement('br'));
-      contentCol.appendChild(desc);
-
-      // ---- combine ----
       row.appendChild(imgCol);
-      row.appendChild(contentCol);
+      row.appendChild(h4);
+      row.appendChild(dateSpan);
+      row.appendChild(desc);
+      
       frag.appendChild(row);
       frag.appendChild(document.createElement('br'));
     });

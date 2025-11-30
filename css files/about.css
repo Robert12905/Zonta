@@ -16,7 +16,7 @@ body {
 .about-hero {
   text-align: center;
   background-color: #f8f5ef;
-  padding: 0, 22px;
+  padding: 2em; 
   position: relative;
   overflow: visible;
 
@@ -44,11 +44,15 @@ body {
   left: 0;
   right: 0;
   height: var(--hero-bar-height);   /* use variable */
-  background: var(--zonta-mahogany);
+  background-image: url(/Assets/Gradient-red-yellow.png);
+  background-size: cover;
+  background-position: center;
+  background-color: var(--zonta-gold);
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
   pointer-events: none;
+  padding: 20px;
 }
 
 /* text column (left) */
@@ -120,15 +124,20 @@ body {
     flex-direction: column;
     gap: 16px;
   }
+  .about-hero{
+    margin: 50px auto;
+  }
 
   .about-hero::before {
-    height: 160px;
+    height: 400px;
   }
 
   .about-hero .hero-image {
     width: 100%;
     max-width: 800px;
-    height: 160px;
+    height: 200px;
+    object-fit: contain;
+    object-position: center;
   }
 
   .hero-text {
