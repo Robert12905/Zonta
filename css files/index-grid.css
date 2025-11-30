@@ -1,0 +1,377 @@
+/* --- HERO WRAPPER --- */
+/* --- HERO WRAPPER (GRID CONTAINER) --- */
+.hero {
+  position: relative;
+  background-image: url("../Assets/Yellow-background.png");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+
+  display: grid; 
+  
+  /* Two rows: one for content, one for the carousel at the bottom */
+  grid-auto-rows: auto; /* 'auto' for content, 200px height for the carousel area */
+  
+  /* 3. DEFINE COLUMNS */
+  /* Column 1 for text (450px max), Column 2 for the image (takes the rest) */
+  grid-auto-columns: auto 200px 400px;
+  
+  /* 4. DEFINE AREAS (for easy content placement) */
+  grid-template-areas:
+    "content-area image-area image-area" /* Row 1: Text on left, Image on right */
+    "carousel-area carousel-area carousel-area"; /* Row 2: Carousel spans both columns */
+    
+  /* Padding on the sides of the grid area */
+  padding:2vw 3vw 2vw 3vw; /* Top, Right, Bottom (0 because carousel is absolute), Left */
+  gap: 2em;
+  /* Set a min-height to ensure visual impact on large screens */
+  min-height: 550px; 
+}
+
+/* 5. PLACEMENT OF CHILDREN USING grid-area */
+/* Assign existing children to the defined grid areas */
+.hero-content {
+  z-index: 3;
+  grid-area: content-area;
+  align-self: top; /* Vertically centers the text content within its cell */
+  max-width: none; /* Let the grid column size handle the width */
+}
+
+.group-photo {
+  grid-area: image-area;
+  align-self: end; /* Aligns the bottom of the image to the bottom of the cell (Row 1) */
+  justify-self: end; /* Aligns the image to the right of its cell */
+  position: relative; /* Keep relative/z-index for the spill effect */
+  z-index: 2;
+  opacity: 0;
+  animation: fadeIn 1.4s ease-out forwards;
+  animation-delay: 1.2s;
+}
+
+/* 6. PLACEMENT OF CAROUSEL */
+.carousel-wrapper {
+  /* This is the key change for the full-width carousel row */
+  grid-area: carousel-area;
+  
+  /* Reset positioning properties from the old Flex layout */
+  position: relative; /* Change from absolute to relative for normal flow */
+  bottom: auto; 
+  left: auto;
+  transform: none; 
+  
+  overflow: hidden;
+  margin: 0 auto;
+  z-index: 4;
+}
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(2,18,30,0.15);
+}
+
+
+
+/* --- TITLE --- */
+.hero-content h1 {
+  text-transform: capitalize;
+  text-shadow: -4px 2px 5px rgba(0,0,0,0.3); /*x,y,z offset and blur*/
+  font: bold clamp(36px, 4vw, 54px) / clamp(48px, 5vw, 64px) var(--font-family);
+  margin-bottom: 20px;
+  color: var(--white-text);
+}
+
+/* --- PARAGRAPH --- */
+.hero-content p {
+  text-shadow: -4px 2px 5px rgba(0,0,0,0.3); /*x,y,z offset and blur*/
+  color: var(--white-text);
+  font: clamp(18px, 2vw, 34px) / clamp(28px, 3vw, 44px) var(--font-family);
+  line-height: 1.5;
+  margin-right: 40px;
+  padding-bottom: 10px; /* space between text and button */
+}
+/* --- IMAGE ANIMATIONS --- */
+.spill {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* ensures it scales like background-size:cover */
+  object-position: center;
+  z-index: 0;
+  animation: fadeIn 1.6s ease-out forwards;
+}
+
+
+/* --- BUTTON --- */
+.hero-btn {
+  display: inline-block;
+  background: white;
+  color: black;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+    scale: 1.05;
+    background: var(--zonta-mahogany); /* change button background on hover */
+    color: var(--white-text); /* make button text white on hover */
+}
+/* --- CAROUSEL WRAPPER (The Viewport with Fades) --- */
+
+.carousel::-webkit-scrollbar {
+  display: none; 
+}
+
+/* --- CAROUSEL TRACK (The Animated Element) --- */
+/* The carousel-track will hold the groups and be the element we animate. */
+.carousel-track {
+    display: flex;
+    white-space: nowrap;
+    width: clamp(600px, 90vw, 1200px);
+    /* Applied the marquee animation */
+    animation: scroll-left 30s linear infinite;
+    animation-play-state: running;
+}
+
+/* Pause on hover (Optional nice-to-have) */
+.carousel-wrapper:hover .carousel-track {
+    animation-play-state: paused;
+}
+
+/* The 'group' is now responsible for holding the items in one row */
+.group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5em;
+    flex-shrink: 0; /* Prevents the group from shrinking */
+    padding-right: 5em; /* Space between the end of one group and the start of the next */
+}
+.card {
+  flex: 0 0 auto;
+  width: clamp(60px, 16vw, 200px);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;      /* keeps image inside the box */
+  border-radius: 1em;
+  padding: 1rem;       /* small padding for logo "air" */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-img:hover{
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+.card-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain; /* keeps whole logo visible, preserves ratio */
+  object-position: center;
+}
+/* --- FADING EFFECT --- */
+.carousel-wrapper::before,
+.carousel-wrapper::after {
+   content: "";
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   width: clamp(30px, 12vw, 120px); /* fade width */
+   height: clamp(60px, 16vw, 200px); /* fade height = card height */
+   pointer-events: none;
+   z-index: 10;
+}
+
+/* Left */
+.carousel-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right,
+      rgba(0, 0, 0, 0.53),
+      rgba(0,0,0,0)
+    );
+}
+
+/* Right */
+.carousel-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left,
+      rgba(0, 0, 0, 0.53),
+      rgba(0, 0, 0, 0)
+    );
+}
+.events-title{
+  font-size: 2.5em;
+  text-align: center;
+}
+.events-list {
+  /* Ensure it spans the full width of the viewport */
+  width: 100%; 
+  /* Centers the block-level content (like the events-container below it) */
+  margin: 0 auto;
+  /* Remove the padding from before if it's interfering with centering */
+  padding: 2vw; /* Keep if you want padding around the list section */
+}
+
+/* Container for the flex layout */
+.event-row {
+    display: grid;
+    grid-template-columns: 300px 1fr;   /* col1 = image, col2 = text */
+    grid-template-rows: auto auto auto; /* 3 rows */
+    column-gap: 20px;
+    row-gap: 10px;
+
+    padding: 30px 0px;
+    margin: auto;
+    max-width: 900px;
+
+    border-bottom: 1px solid #414040;
+}
+
+.event-content {
+    grid-column: 2; /* all content stays in column 2 */
+    display: block;
+}
+
+.event-description {
+    grid-column: 2;
+    grid-row: 3;
+    margin-top: 6px;
+    font-size: 1.3em;
+    line-height: 1.5;
+}
+
+.event-image-col {
+    grid-column: 1;
+    grid-row: 1 / span 3;   /* occupies rows 1, 2, 3 */
+}
+.event-image-col img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.EventDateTime {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0;
+    font-size: 1.3em;
+}
+
+.event-row h4 {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+    font-size: 1.6em;
+    line-height: 1.3;
+    text-transform: capitalize;
+
+}
+
+/* --- Animations --- */
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes scroll-left {
+  from { transform: translateX(0%);}
+  to { transform: translateX(-140%);} /* Moves by the width of one duplicated group */
+}
+
+/* --- Responsive UI --- */
+
+@media (max-width: 1064px) {
+  .hero {
+    /* STACK THE CONTENT */
+    grid-template-columns: 1fr; /* Single column for both content and image */
+    grid-template-rows: auto auto 150px; /* Content (auto), Image (auto), Carousel (150px) */
+    grid-template-areas:
+      "content-area" 
+      "image-area"
+      "carousel-area";
+      
+    padding: 30px 20px 0 20px; /* Adjust padding for mobile */
+    min-height: auto; /* Allow height to collapse to content */
+  }
+
+  /* Image styling when stacked */
+  .group-photo {
+    width: 90%;
+    margin: 20px auto; /* Center the image */
+    right: auto;
+    justify-self: center;
+    align-self: center;
+  }
+  
+  /* Carousel height adjustment */
+  .carousel-wrapper {
+    height: 100px; /* Matches the new grid-template-rows size */
+  }
+  
+  /* Carousel card size adjustment */
+  .card {
+    width: clamp(40px, 20vw, 100px);
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .events-title { padding-left: 12px; font-size: 1.45rem; }
+}
+
+/* Reset on smaller screens where hero/ carousel sizing changes (avoid overlap) */
+@media (max-width: 768px) {
+  #events-container { margin-top: 0; }
+}
+@media (max-width: 768px) {
+
+    .event-row {
+        display: grid;
+
+        /* STACK EVERYTHING */
+        grid-template-columns: 1fr;      /* single column */
+        grid-template-rows: auto auto auto auto; /* image + title + date + desc */
+
+        row-gap: 12px;
+    }
+
+    /* Image now on top */
+    .event-image-col {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .event-image-col img {
+        width: 100%;
+        height: auto;   /* allow natural height */
+        max-height: 250px; /* optional: prevent overly tall images */
+        object-fit: cover;
+    }
+
+    /* Title */
+    .event-row h4 {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    /* Date/Time */
+    .EventDateTime {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    /* Description */
+    .event-description {
+        grid-column: 1;
+        grid-row: 4;
+    }
+}

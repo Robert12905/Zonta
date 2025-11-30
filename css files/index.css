@@ -12,7 +12,10 @@
 }
 .hero-image {
   width: 100%;
-  height: auto;
+  height: 100%;
+  max-height: 600px;
+  object-fit: cover;
+  object-position: center;
   display: block;
   border-radius: 6px;
   box-shadow: 0 6px 18px rgba(2,18,30,0.15);
@@ -27,6 +30,7 @@
 
 /* --- TITLE --- */
 .hero-content h1 {
+  text-transform: capitalize;
   text-shadow: -4px 2px 5px rgba(0,0,0,0.3); /*x,y,z offset and blur*/
   font: bold clamp(36px, 4vw, 54px) / clamp(48px, 5vw, 64px) var(--font-family);
   margin-bottom: 20px;
@@ -37,7 +41,7 @@
 .hero-content p {
   text-shadow: -4px 2px 5px rgba(0,0,0,0.3); /*x,y,z offset and blur*/
   color: var(--white-text);
-  font-size: 1.5rem;
+  font: clamp(18px, 2vw, 34px) / clamp(28px, 3vw, 44px) var(--font-family);
   line-height: 1.5;
   padding-right: 50px; /* space between text and image */
   padding-bottom: 30px; /* space between text and button */
@@ -45,12 +49,14 @@
 /* --- IMAGE ANIMATIONS --- */
 .spill {
   position: absolute;
-  right: 0;
   top: 0;
-  transform: translateY(-50%);
+  right: 0;
+  width: 100%;
   height: 100%;
+  object-fit: cover;   /* ensures it scales like background-size:cover */
+  object-position: center;
   z-index: 1;
-  animation: spillIn 1.6s ease-out forwards;
+  animation: fadeIn 1.6s ease-out forwards;
 }
 
 /* Group photo fade animation */
@@ -79,25 +85,166 @@
     background: var(--zonta-mahogany); /* change button background on hover */
     color: var(--white-text); /* make button text white on hover */
 }
-
-@keyframes spillIn {
-  0% {
-    /* Start position: Fully visible, slightly off-screen to the right (if needed) */
-    opacity: 0; 
-    transform: translateX(100%); /* Starts left to 100% opacity on right*/
-  }
-  100% {
-    /* End position: Slide left and fade out */
-    opacity: 1; 
-    transform: translateX(0%); /* For right side placement */
-  }
+/* --- CAROUSEL WRAPPER (The Viewport with Fades) --- */
+.carousel-wrapper {
+  position: absolute;
+  /* Centering */
+ 
+  /* Placement at the bottom of the hero section */
+  bottom: 0;
+  /* Responsive Width */
+  width: 100%; /* Adjust this percentage to control how wide it appears */
+  max-width: auto; 
+  height: 200px; /* Define a fixed height for the carousel area */
+  
+  overflow: hidden; /* Hides content outside the wrapper */
+  margin: 0 auto; /* Remove the old margin: 150px auto; */
+  z-index: 4; /* Place it above the hero image and spill */
+    
+  /* Required for the absolute positioning of the fade gradients */
 }
 
+/* Hide the unused scrollbar (already in your code, keeping for completeness) */
+.carousel::-webkit-scrollbar {
+  display: none; 
+}
+
+/* --- CAROUSEL TRACK (The Animated Element) --- */
+/* The carousel-track will hold the groups and be the element we animate. */
+.carousel-track {
+    display: flex;
+    white-space: nowrap;
+    width: fit-content; /* Ensure the track is exactly the width of its content (two groups) */
+    /* Applied the marquee animation */
+    animation: scroll-left 40s linear infinite;
+    animation-play-state: running;
+}
+
+/* Pause on hover (Optional nice-to-have) */
+.carousel-wrapper:hover .carousel-track {
+    animation-play-state: paused;
+}
+
+/* The inner 'carousel' element is no longer needed but kept for structure */
+.carousel {
+    display: flex;
+}
+
+/* The 'group' is now responsible for holding the items in one row */
+.group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5em;
+    flex-shrink: 0; /* Prevents the group from shrinking */
+    padding-right: 5em; /* Space between the end of one group and the start of the next */
+}
+.card {
+  flex: 0 0 auto;
+  width: clamp(60px, 16vw, 200px);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;      /* keeps image inside the box */
+  border-radius: 1em;
+  padding: 1rem;       /* small padding for logo "air" */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-img:hover{
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+.card-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain; /* keeps whole logo visible, preserves ratio */
+  object-position: center;
+}
+/* --- FADING EFFECT --- */
+.carousel-wrapper::before,
+.carousel-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 150px; /* Adjust fade width */
+  z-index: 10;
+  pointer-events: none; /* Allows mouse interaction with elements underneath */
+}
+
+/* Left Fade: Fades from the background color (Mahogany/Red) to transparent */
+.carousel-wrapper::before {
+  left: 0;
+  /* Use the color that appears on the left side of your hero, which looks like a dark red/mahogany */
+background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(88, 88, 88, 0.648) 70%, rgb(92, 88, 88) 100%, transparent 20%);}
+
+/* Right Fade: Fades from transparent to the background color */
+.carousel-wrapper::after {
+  right: 0;
+
+  /* Use the color that appears on the right side of your hero, which looks like the yellow/orange */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(88, 88, 88, 0.648) 70%, rgb(92, 88, 88) 100%);}
+
+.events-title{
+  padding-left: 20px;
+}
+/* Container for the flex layout */
+.event-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  border-bottom: 1px solid #414040; /* Optional: adds a line between events */
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 50px;
+}
+
+/* Simulate Bootstrap col-sm-2 */
+.col-sm-2 {
+  flex: 0 0 140px; /* Fixed width for the image area */
+  padding-right: 15px;
+}
+
+/* Simulate Bootstrap col-sm-10 */
+.col-sm-10 {
+  flex: 1; /* Takes up the rest of the space */
+  display: flex;
+  flex-direction: column; /* Forces Title, Date, Desc to stack */
+}
+
+/* Specific styling from your snippet */
+.EventDateTime {
+  font-family: var(--font-family);
+  font-size: 0.9em;
+  color: #504f4f;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+h4 {
+  margin: 0 0 5px 0; /* Remove default margin to tighten the stack */
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 33px;
+  font-family: var(--font-family);
+  text-transform: capitalize;
+}
+
+/* --- Animations --- */
 
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
+
+@keyframes scroll-left {
+  from { transform: translateX(0%);}
+  to { transform: translateX(-50%);} /* Moves by the width of one duplicated group */
+}
+
+/* --- Responsive UI --- */
 
 @media (max-width: 1064px) {
   .hero {
@@ -112,7 +259,26 @@
     height: auto;
     margin-top: 20px;
   }
+
+  .carousel-wrapper {
+    height: 80px; /* Reduce height on smaller screens */
+    bottom: 30px; /* Adjust position */
+  }
+  .carousel-wrapper::after,
+  .carousel-wrapper::before {
+    width: 30px; /* Reduce fade width on smaller screens */
+  }
+  .card {
+    width: clamp(40px, 20vw, 80px);
+    padding: 0.5rem;
+  }
 }
 
- /* .spill { */
-/*  display: none;  Optional: hide gradient on smaller screens */
+@media (max-width: 480px) {
+  .events-title { padding-left: 12px; font-size: 1.45rem; }
+}
+
+/* Reset on smaller screens where hero/ carousel sizing changes (avoid overlap) */
+@media (max-width: 1064px) {
+  #events-container { margin-top: 0; }
+}

@@ -7,7 +7,7 @@
 
 body {
   /* inherit the site's global font (defined in styles.css) so header and nav stay consistent */
-  font-family: Segoe UI, Roboto, Arial, sans-serif;
+  font-family: var(--font-family);
   color: #333;
   background-color: #faf7f2;
 }
@@ -65,6 +65,30 @@ body {
   color: #333;
   font-size: 1rem;
 }
+/* Membership/about hero: keep text and image side-by-side and prevent image from growing too large */
+.about-hero .hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  justify-content: space-between;
+  max-width: 1100px; /* keep content constrained like other containers */
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.about-hero .hero-text {
+  flex: 1 1 46%;
+}
+
+/* flank the text with two modestly-sized images */
+.about-hero .hero-image {
+  flex: 0 0 220px; /* fixed-ish column so images stay reasonable */
+  width: auto;
+  max-width: 220px; /* prevent overly large images on wide screens */
+}
+.about-hero .hero-image--left { order: 0; }
+.about-hero .hero-text { order: 1; }
+.about-hero .hero-image--right { order: 2; }
 
 /* image column (right) — make image height equal to bar height so it "hooks" to top/bottom */
 .about-hero .hero-image {

@@ -1,0 +1,200 @@
+/* --- FOOTER CONTAINER & WRAPPER --- */
+.site-footer {
+  /* Use a basic structure to contain everything */
+  display: block; 
+  padding-top: 10px;
+  background-color: white; /* Assume a white background for the text color */
+}
+
+/* Center the container and add fixed side padding */
+.site-footer .container {
+  max-width: 1200px; /* Increased max-width for better desktop spread */
+  margin: 0 auto;
+  padding: 24px 75px; /* Increase padding for left/right gutters as requested */
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* --- FOOTER GRID ROW (3 Columns Default) --- */
+.footer-row {
+  display: grid;
+  color: #222;
+  /* 3 columns that grow equally (1fr), no hard min-width needed here */
+  grid-template-columns: 1fr 1fr 1fr; 
+  align-items: start;
+  gap: 40px; /* Simplified and reduced gap for better fit */
+  padding: 12px 0;
+}
+
+/* --- COLUMN ALIGNMENT & STYLING --- */
+
+/* Left Column (Zonta Info) */
+.footer-left {
+  text-align: left;
+}
+
+/* Center Column (Links) */
+.footer-links {
+  /* Center the block within its grid cell */
+  justify-self: center; 
+  text-align: left; /* Keep text left-aligned inside the block */
+}
+
+/* Right Column (Newsletter) */
+.footer-newsletter {
+  /* Pin newsletter to the right grid cell and align its content to the right edge */
+  justify-self: end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* Newsletter Form (Horizontal alignment for input/button on desktop) */
+.newsletter-form {
+  display: flex;
+  gap: 8px;
+  width: 100%; /* Let the form fill available column width */
+  align-items: center;
+}
+/* --- Newsletter Input Field --- */
+.newsletter-form input[type="email"] {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    /* Ensure the input takes most of the space */
+    flex: 1 1 auto;
+    min-width: 120px; /* Prevents the input from disappearing */
+}
+
+/* --- Subscribe Button (Matching Red/Mahogany Look) --- */
+.newsletter-form button {
+    padding: 8px 12px;
+    background: var(--zonta-mahogany); /* Your defined red color */
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+}
+
+.newsletter-form button:hover {
+    background: #a04040; /* Slightly darker shade on hover */
+}
+
+/* --- Alignment for Newsletter Labels --- */
+.footer-newsletter label {
+    /* This ensures the label "Email address" is positioned above the input field */
+    display: block;
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 4px; /* Space between label and input */
+    
+    /* Ensure the text is aligned with the container (right-aligned on desktop) */
+    text-align: inherit; 
+}
+
+/* Copyright (Keep centered below the row) */
+.site-footer .copyright {
+  text-align: center;
+  width: 100%;
+  margin-top: 12px;
+  padding: 8px 0 16px;
+  color: #222;
+}
+/* --- Title Appearance (Matches Sample Image) --- */
+.site-title {
+    /* Set the color to match the image background */
+    color: #222; /* Use a dark color for contrast against the light footer background */
+    font-weight: 700;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+/* --- Horizontal Underline Appearance --- */
+.footer-underline {
+    /* The line under the title */
+    display: block;
+    height: 4px; /* Thickness of the line */
+    background: #444; /* Dark gray/brown color for the line */
+    width: 100%; 
+    max-width: 150px; /* Controls the short length of the line */
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+/* Specific length control for the Links column line (if needed to be shorter) */
+.footer-links .footer-underline {
+    max-width: 80px; 
+}
+
+/* --- Sub-Text and Links Appearance --- */
+.footer-left .site-sub {
+    margin: 5px 0;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.footer-left a,
+.footer-links-list a {
+    color: #3b73b9; /* A blue color for clickable links */
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.footer-links-list a:hover,
+.footer-left a:hover {
+    color: var(--zonta-mahogany);
+}
+
+.footer-links-list li {
+    margin: 8px 0;
+}
+@media (max-width: 900px) {
+    /* Reduce container padding on small screens to save space */
+    .site-footer .container {
+        padding: 24px 20px;
+    }
+
+    /* --- FIX: STACKING THE COLUMNS --- */
+    .footer-row {
+        /* Switch from 3 columns to 1 column */
+        grid-template-columns: 1fr;
+        /* Add vertical space between the stacked columns */
+        gap: 30px; 
+    }
+
+    /* --- ALIGNMENT WHEN STACKED --- */
+    /* All sections should be centered when stacked vertically */
+    .footer-left,
+    .footer-links,
+    .footer-newsletter {
+        justify-self: stretch; /* Fills the 1fr column */
+        text-align: center; /* Center the text content */
+        align-items: center; /* Center flex children (like newsletter form) */
+    }
+    
+    /* Center the decorative line under the links */
+    .footer-links .footer-underline {
+        margin: 8px auto 0;
+    }
+
+    /* Force newsletter input and button to stack vertically */
+    .footer-newsletter {
+        align-items: center; 
+        text-align: center; 
+    }
+    .newsletter-form {
+        /* Switch from horizontal display to vertical stack */
+        flex-direction: column;
+        max-width: 300px; /* Constrain the form width */
+        width: 100%;
+    }
+    .newsletter-form button {
+        width: 100%; /* Make the button full width */
+    }
+}

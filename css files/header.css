@@ -1,0 +1,208 @@
+/* Header / Nav */
+.site-header {
+  background: var(--zonta-mahogany);
+  color: var(--white-text);
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Flex container with left/right padding + max-width */
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* control spacing from edges */
+  padding: var(--header-padding-vertical) 40px;
+
+  /* keeps content centered on big monitors */
+  max-width: 90vw;
+  margin: 0 auto;
+
+  min-height: 72px;
+}
+/* Header / Nav */
+.site-header {
+  background: var(--zonta-mahogany);
+  color: var(--white-text);
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Flex container with left/right padding + max-width */
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* control spacing from edges */
+  padding: var(--header-padding-vertical) 40px;
+
+  /* keeps content centered on big monitors */
+  max-width: 1400px;
+  margin: 0 auto;
+
+  min-height: 72px;
+}
+
+/* Logo section */
+.brand-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--white-text);
+}
+
+.brand-logo {
+  height: var(--logo-height);
+  width: auto;
+  margin-right: 40px;
+}
+
+/* Desktop nav */
+.main-nav {
+  display: flex;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: var(--white-text);
+  text-decoration: none;
+  padding: 8px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: var(--nav-font-size);
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background: rgba(255,255,255,0.08);
+}
+
+.nav-link.active {
+  background: var(--zonta-gold);
+  color: #082635;
+}
+
+/* Mobile Responsive View */
+@media (max-width: 810px) {
+  .header-inner {
+    flex-direction: column;
+    /* Center children horizontally so stacked nav sits centered */
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .main-nav {
+    position: relative;
+    width: 100%;
+    /* center the nav-list inside the main-nav on narrow screens */
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-list {
+    position: relative;
+    flex-direction: column;
+    /* center items inside the list so stacked links sit in the middle */
+    align-items: center;
+    padding: 12px 0;
+    background: transparent;
+  }
+
+  .nav-link {
+    /* allow links to size to content and center their text */
+    width: auto;
+    padding: 10px 12px;
+    text-align: center;
+  }
+}
+
+
+.header-center { 
+  display: flex;
+  align-items: stretch;
+  gap: 12px;letter-spacing: 2px;
+  opacity: 0.95;
+  padding: 0 6px;
+}
+
+
+
+.nav-link:hover,
+.nav-link:focus {
+  background: rgba(219, 47, 47, 0.08);
+  outline: none;
+}
+
+.nav-link.active {
+  background: var(--zonta-gold);
+  color: #082635;
+}
+
+/* Responsive: stack nav under brand on small screens */
+@media (max-width:810px) {
+  .header-inner {
+    flex-direction: column;
+    /* match the other media block: center children horizontally */
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .nav-list {
+    flex-direction: column;
+    align-items: center; /* ensure stacked nav links are centered */
+    background: transparent;
+    padding: 8px;
+    border-radius: 6px;
+  }
+  
+  .nav-link {
+    display: block;
+  }
+}
+
+/* Compact full-width variant for narrow phones: center the nav block and make links full-width with extra padding
+   This keeps the menu visually centered while giving large, easy-to-tap targets for touch devices. */
+@media (max-width: 480px) {
+  .header-inner {
+    align-items: center; /* ensure brand + nav block are centered */
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .main-nav {
+    /* stay centered and sized to content */
+    justify-content: center;
+  }
+
+  .nav-list {
+    width: min(480px, 94%); /* cap width so it doesn't become too wide on phones */
+    margin: 0 auto;        /* center the list as a block */
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+  }
+
+  .nav-link {
+    width: 100%;           /* each link fills the nav-list so they stack as large touch targets */
+    max-width: 420px;     /* keep a max width so the block remains centered on wide phones */
+    padding: 12px 18px;   /* larger tappable area */
+    text-align: center;
+    border-radius: 8px;
+    display: block;
+  }
+}

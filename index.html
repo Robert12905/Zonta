@@ -7,7 +7,7 @@
     
     <title>Zonta Club of Naples</title>
     <link rel="stylesheet" href="./css files/styles.css">
-    <link rel="stylesheet" href="./css files/index.css">
+    <link rel="stylesheet" href="./css files/index-grid.css">
 
     <link rel="stylesheet" href="./css files/header.css">
     <link rel="stylesheet" href="./css files/footer.css">
@@ -50,12 +50,39 @@
                 <a href="./html files/membership-form.html" class="hero-btn">Become a Member</a>
             </div>
             <!-- Gradient spill -->
-            <img src="./Assets/Gradient-red-yellow.png" 
+            <img src="./Assets/Gradient Fill 2.png" 
                 class="spill" alt="gradient overlay">
 
             <!-- Group photo -->
             <img id="hero-img" src="./Assets/Group-photo-edit.png" class="group-photo" alt="group photo">
+        
+        <div class="carousel-wrapper">
+            <div class="carousel-track">
+                    <div class="group">
+                        <div class="card"><img id="card-image-1" src="./Assets/ACS-edit.png" class="card-img" alt="group photo"></div>
+                        <div class="card"><img id="card-image-2" src="./Assets/TS-Logo.png" class="card-img" alt="group photo"></div>
+                        <div class="card"><img id="card-image-3" src="./Assets/Path2freedom.png" class="card-img" alt="group photo"></div>
+                        <div class="card"><img id="card-image-4" src="./Assets/Habitat-4-Humanity.png" class="card-img" alt="group photo"></div>
+                        <div class="card"><img id="card-image-5" src="./Assets/ProjectHelp.png" class="card-img" alt="group photo"></div>
+                        <div class="card"><img id="card-image-6" src="./Assets/PACE.jpg" class="card-img" alt="group photo"></div>
+                    </div>
+                    <div aria-hidden class="group">
+                        <div class="card"><img id="card-image-1" src="./Assets/ACS-edit.png" class="card-img" alt="group photo"></div>
+                        <div class="card"><img id="card-image-2" src="./Assets/TS-Logo.png" class="card-img" alt="group photo"></div>
+                        <div class="card"><img id="card-image-3" src="./Assets/Path2freedom.png" class="card-img" alt="group photo"></div>
+                        <div class="card"><img id="card-image-4" src="./Assets/Habitat-4-Humanity.png" class="card-img" alt="group photo"></div>
+                        <div class="card"><img id="card-image-5" src="./Assets/ProjectHelp.png" class="card-img" alt="group photo"></div>
+                        <div class="card"><img id="card-image-6" src="./Assets/PACE.jpg" class="card-img" alt="group photo"></div>
+                    </div>
+            </div>
+        </div>
         </section>
+        <section class="events-list">
+            <h2 class="events-title">Upcoming Events</h2>
+        <div id="events-container" class="TaggedListPanel">
+        </div>
+        </section>
+        
     </main>
 
         <footer class="site-footer">
@@ -111,17 +138,8 @@
             <!-- Load CMS content into the page (populates hero title, paragraph, image) -->
             <script src="./js/content-loader.js"></script>
             <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-            <script>
-                if (window.netlifyIdentity) {
-                window.netlifyIdentity.on("init", user => {
-                    if (!user) {
-                    window.netlifyIdentity.on("login", () => {
-                        document.location.href = "/admin/";
-                    });
-                    }
-                });
-                }
-            </script>
+            <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+            <script src="./js/events-final.js"></script>
+            <script src="./js/permissions.js"></script>
     </body>
 </html>

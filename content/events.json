@@ -1,0 +1,12 @@
+{
+  "events_list": [
+    {
+      "posted_at": "2025-11-28T17:56:00.000-05:00",
+      "title": "this will be future event",
+      "start_date": "12/01/2025",
+      "start_time": "5:56 pm",
+      "description": "event should still be here",
+      "image": "/Assets/Group-photo-edit.png"
+    }
+  ]
+}

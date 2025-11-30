@@ -2,6 +2,9 @@ backend:
   name: git-gateway
   branch: main
 
+# Use the local backend for testing
+local_backend: true
+
 media_folder: "Assets"
 public_folder: "/Assets"
 
@@ -11,13 +14,34 @@ collections:
     label: "Pages"
     files:
       - name: "homepage"
-        label: "Homepage Content"
+        label: "Homepage Banner"
         file: "content/homepage.json"
         fields:
           - { name: "heroTitle", label: "Hero Title", widget: "string" }
           - { name: "mainParagraph", label: "Main Paragraph", widget: "text" }
           - { name: "heroImage", label: "Hero Image", widget: "image" }
-      
+
+      - name: "events"
+        label: "Events"
+        file: "content/events.json"
+        fields:
+          - name: "events_list"        
+            label: "Events List"
+            widget: "list"
+            fields:               
+              - { name: "title", label: "Event Title", widget: "string" }
+              - { name: "start_date", label: "Start Date", widget: "datetime", format: "MM/DD/YYYY", date_format: "MM/DD/YYYY", time_format: false }
+              - { name: "end_date", label: "End Date", widget: "datetime", format: "MM/DD/YYYY", date_format: "MM/DD/YYYY", time_format: false, required: false }
+              - { name: "start_time", label: "Start Time", widget: "datetime", date_format: false, time_format: "h:mm a", format: "h:mm a" }
+              - { name: "end_time", label: "End Time", widget: "datetime", date_format: false, time_format: "h:mm a", format: "h:mm a", required: false }
+              - name: "description"
+                label: "Event Description"
+                widget: "markdown"
+                modes: ["rich_text"]
+              - { name: "image", label: "Event Image", widget: "image", required: false }
+              - { name: "link", label: "Event Link URL", widget: "string", required: false }
+              - { name: "posted_at", label: "Posted At", widget: "datetime", required: true, default: "{{now}}"}
+
       - name: "about"
         label: "About Page"
         file: "content/about.json"
@@ -32,17 +56,3 @@ collections:
               - { name: "image", label: "Card Image", widget: "image" }
               - { name: "text", label: "Card Text", widget: "text" }
               - { name: "link", label: "Link URL", widget: "string", required: false }
-
-  # Collection 2: "Events" (Must use 'folder')
-  - name: "events"
-    label: "Events"
-    folder: "content/events"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { name: "title", label: "Event Title", widget: "string" }
-      - { name: "description", label: "Full Event Description", widget: "markdown" }
-      - { name: "image", label: "Event Image", widget: "image" }
-      - { name: "date", label: "Event Date", widget: "datetime" }
-      - { name: "buttonText", label: "Button Text", widget: "string", required: false }
-      - { name: "buttonLink", label: "Button Link", widget: "string", required: false }
