@@ -1,0 +1,198 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://images.unsplash.com/photo-1581092795365-70d0f30e3537?auto=format&fit=crop&w=1650&q=80') no-repeat center center/cover;
+    color: white;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+
+    text-align: center;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.btn {
+    background-color: #802528;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #802528;
+}
+
+.split-section .text {
+    text-align: center; /* centers inline/block elements inside */
+}
+
+.split-section .text .btn {
+    display: inline-block; /* ensures the button respects text-align */
+    margin-top: 15px;      /* space above button */
+    margin-bottom: 30px; /* space below text section */
+}
+
+/* Container */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Sections */
+section {
+    padding: 10px 0;
+}
+
+section h2 {
+    color: #802528;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+section p, section ul, section ol {
+    font-size: 1rem;
+}
+
+ul li, ol li {
+    margin-bottom: 10px;
+}
+
+.apply-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px; /* space between all children (heading, text, list, button) */
+    
+}
+
+.apply-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.apply-container .btn {
+    margin-top: 20px;
+}
+
+/* Split Sections *//*------------------------------------------------------------------------------*/
+.split-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap; /* responsive stacking */
+}
+
+.split-container.reverse {
+    flex-direction: row-reverse;
+}
+
+.split-container .text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.split-container .image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.split-container .image img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.section-divider {
+    border: 0; /* remove default border */
+    height: 2px; /* thickness of the line */
+    background: #8b6a3f; /* color of the line, Zonta-style */
+    margin: 10px auto; /* spacing above and below */
+    width: 80%; /* optional: shorter than full width */
+    margin-left: auto;
+    margin-right: auto; /* center the line */
+}
+/*------------------------------------------------------------------------------*/
+
+/* Responsive */
+@media (max-width: 768px) {
+    .split-container, .split-container.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .split-container .text, .split-container .image {
+        min-width: 100%;
+    }
+}
+
+/*------------------------------------------------------------------------------*/
+
+/* Responsive */
+@media (max-width: 768px) {
+    .split-container, .split-container.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .split-container .text, .split-container .image {
+        min-width: 100%;
+    }
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--background);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
