@@ -171,17 +171,6 @@ ul li, ol li {
     }
 }
 
-
-/* Footer */
-footer {
-    background-color: var(--background);
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-
-
-
 footer a:hover {
     text-decoration: underline;
 }
