@@ -60,7 +60,14 @@
   box-sizing: border-box;
   margin-bottom: 8px;
 }
-.newsletter-form button { padding: 8px 12px; background: var(--zonta-mahogany); color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+.newsletter-form button { 
+  padding: 8px 12px; 
+  background: var(--zonta-mahogany);
+  color: #fff; 
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+}
 
 .newsletter-form {
   display: flex;
@@ -185,19 +192,25 @@
     align-items: center;
   }
 
+  .footer-newsletter {
+    order: 1;
+    align-items: center; 
+    justify-self: center;
+    text-align: center;
+  }
+
   .footer-left {
+    order: 3;
     align-items: center; 
     margin-right: 0;     
   }
 
-  .footer-underline {
-    margin: 8px auto; 
+  .footer-links {
+    order: 2;
   }
 
-  .footer-newsletter {
-    align-items: center; 
-    justify-self: center;
-    text-align: center;
+  .footer-underline {
+    margin: 8px auto; 
   }
 
   .newsletter-form {
