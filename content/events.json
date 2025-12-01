@@ -18,16 +18,6 @@
       "end_time": "12:00 pm",
       "description": "Help us give some joy to families in need this holiday!",
       "image": "/Assets/gifts.JPG"
-    },
-    {
-      "posted_at": "2025-11-30T04:20:00.000-05:00",
-      "title": "Donate to help a good cause!",
-      "start_date": "11/30/2025",
-      "start_time": "9:00 am",
-      "end_time": "4:00 pm",
-      "description": "Donations will be accepted during the hours provided above, click the link in the title for more information.",
-      "link": "https://zonta-naples.org/",
-      "image": "/Assets/standingSign.jpg"
     }
   ]
 }
