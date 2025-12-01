@@ -60,7 +60,6 @@
   box-sizing: border-box;
   margin-bottom: 8px;
 }
-<<<<<<< Updated upstream
 .newsletter-form button { 
   padding: 8px 12px; 
   background: var(--zonta-mahogany);
@@ -69,9 +68,6 @@
   border-radius: 4px; 
   cursor: pointer; 
 }
-=======
-.newsletter-form button { padding: 8px 12px; background: var(--zonta-mahogany); color: #fff; border: none; border-radius: 4px; cursor: pointer; }
->>>>>>> Stashed changes
 
 .newsletter-form {
   display: flex;
@@ -196,7 +192,6 @@
     align-items: center;
   }
 
-<<<<<<< Updated upstream
   .footer-newsletter {
     order: 1;
     align-items: center; 
@@ -206,33 +201,18 @@
 
   .footer-left {
     order: 3;
-=======
-  .footer-left {
->>>>>>> Stashed changes
     align-items: center; 
     margin-right: 0;     
   }
 
-<<<<<<< Updated upstream
   .footer-links {
     order: 2;
   }
 
-=======
->>>>>>> Stashed changes
   .footer-underline {
     margin: 8px auto; 
   }
 
-<<<<<<< Updated upstream
-=======
-  .footer-newsletter {
-    align-items: center; 
-    justify-self: center;
-    text-align: center;
-  }
-
->>>>>>> Stashed changes
   .newsletter-form {
     flex-direction: column;
     width: 100%;
