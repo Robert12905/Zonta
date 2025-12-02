@@ -23,20 +23,9 @@ How to enable the admin panel (Netlify hosting):
 Local testing: Decap CMS requires a backend (git-gateway) and won't fully work from file:// paths — test on a deployed preview site or local dev server connected to Git/Gateway.
 
 ## System Architecture
-Visual documentation of the project structure and logic.
+Click the links below to view the architecture diagrams for this project.
 
-### 1. Class Diagram (Structure)
-**Purpose:** Shows how the file structure (JSON, JS, HTML) maps to logical classes.
-![Class Diagram](UML/class-diagram.png)
-
-### 2. Sequence Diagram (Timeline)
-**Purpose:** Shows the lifecycle of an event from creation (Admin) to deletion (Automation).
-![Sequence Diagram](UML/sequence-diagram.png)
-
-### 3. Collaboration Diagram (Interactions)
-**Purpose:** Shows how the 3 main actors (Admin, User, Automation) interact via the GitHub Repo.
-![Collaboration Diagram](UML/collaboration-diagram.png)
-
-### 4. Activity Diagram (Workflow)
-**Purpose:** Detailed flowchart of the decision logic, specifically the automated cleanup process.
-![Activity Diagram](UML/activity-diagram.png)
+* [**Class Diagram**](UML/class-diagram.png) – Structure of data, scripts, and pages.
+* [**Sequence Diagram**](UML/sequence-diagram.png) – Timeline of an event from creation to deletion.
+* [**Collaboration Diagram**](UML/collaboration-diagram.png) – How the Admin, Visitor, and Automation interact.
+* [**Activity Diagram**](UML/activity-diagram.png) – Detailed workflow of the decision logic.
