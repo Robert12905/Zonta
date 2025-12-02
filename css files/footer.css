@@ -165,14 +165,35 @@
   color: #666;
   font-size: 0.95rem;
 }
+/* --- Social Media Icons --- */
+.social-icons {
+  display: flex;
+  gap: 16px;              /* Space between icons */
+  margin-top: 12px;       /* Space between email and icons */
+  justify-content: flex-end; /* Aligns to the right on desktop (matches contact info) */
+}
 
+.social-icons a {
+  color: var(--zonta-mahogany); /* Your requested color */
+  font-size: 1.5rem;      /* Size of the icons */
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s;
+}
+
+.social-icons a:hover {
+  opacity: 0.8;
+  transform: translateY(-2px); /* Slight lift on hover */
+}
 /* Responsive: Stack sections vertically on mobile */
 @media (max-width: 810px) {
   .site-footer .container {
     padding-left: 20px;
     padding-right: 20px;
   }
-
+.social-icons {
+    justify-content: center; 
+    margin-bottom: 10px; /* Add some space below them on mobile */
+  }
   .footer-row {
     display: flex;
     flex-direction: column; /* VERTICAL STACK */

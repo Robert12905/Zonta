@@ -13,11 +13,15 @@
     try {
       const res = await fetch(url, { signal: controller.signal });
       clearTimeout(id);
-      return res;
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
+      }
+      
+      return await res.json();
     } catch (err) {
       clearTimeout(id);
       console.warn('Failed to load homepage JSON:', url, err);
-      throw err;
+      return null;
     }
   }
 
@@ -44,7 +48,11 @@
     const cached = localStorage.getItem(CACHE_KEY);
     if (cached) {
       try {
-        apply(JSON.parse(cached));
+        const parsed = JSON.parse(cached);
+        // Basic check to ensure cache isn't empty/corrupt
+        if (parsed && Object.keys(parsed).length > 0) {
+            apply(parsed);
+        }
       } catch (e) {
         console.warn('Failed to parse cached homepage JSON', e);
         localStorage.removeItem(CACHE_KEY);

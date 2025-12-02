@@ -106,20 +106,21 @@
       row.className = 'row event-row';
 
       // ---- image section ----
-      const imgCol = document.createElement('div');
-      imgCol.className = 'event-image-col';
+      
+        const imgCol = document.createElement('div');
+        imgCol.className = 'event-image-col';
+        
+        const imgBox = document.createElement('div');
+        imgBox.className = 'event-img-box';
 
-      const imgBox = document.createElement('div');
-      imgBox.className = 'event-img-box';
-
-      const img = document.createElement('img');
-      img.className = 'event-img';
-      img.src = event.image || '';
-      img.alt = event.title || '';
-      img.loading = 'lazy';
-
-      imgBox.appendChild(img);
-      imgCol.appendChild(imgBox);
+        const img = document.createElement('img');
+        img.className = 'event-img';
+        img.src = event.image || './Assets/zonta-logo.png';
+        img.alt = event.title || 'Event Image';
+        img.loading = 'lazy';
+      
+        imgBox.appendChild(img);
+        imgCol.appendChild(imgBox);
 
       // ---- content section ----
       const h4 = document.createElement('h4');
